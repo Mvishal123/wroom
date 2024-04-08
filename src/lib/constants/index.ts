@@ -26,7 +26,7 @@ export const WASHROOM_MOCK_DATA = [
     latitude: 28.749682918482293,
     longitude: 77.11644670563328,
     place: "Delhi Technological University",
-    images: [washroom, menWashroom],
+    images: [washroom, menWashroom, menWashroom],
   },
   {
     id: "2",
@@ -36,7 +36,7 @@ export const WASHROOM_MOCK_DATA = [
     latitude: 28.749254365987237,
     longitude: 77.11722336290129,
     place: "Delhi Technological University",
-    images: [washroom],
+    images: [washroom, menWashroom, washroom],
   },
   {
     id: "3",
@@ -46,7 +46,7 @@ export const WASHROOM_MOCK_DATA = [
     latitude: 28.749245201132258,
     longitude: 77.11602790089525,
     place: "Delhi Technological University",
-    images: [washroom, menWashroom],
+    images: [washroom, menWashroom, menWashroom],
   },
 ];
 
