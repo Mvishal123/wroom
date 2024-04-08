@@ -75,6 +75,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer utilities {
   .section-spacing {
     @apply px-6 sm:px-12 lg:px-32;

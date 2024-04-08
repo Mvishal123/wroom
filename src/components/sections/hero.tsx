@@ -1,26 +1,41 @@
-import { crowd, maps } from "@/assets";
+import { arrow, crowd, maps } from "@/assets";
 import Image from "next/image";
 import { Button } from "../ui/button";
+
+import { FaWhatsapp } from "@/lib/icons";
 
 const Hero = () => {
   return (
     <section className="section-spacing py-12 flex items-start flex-col md:flex-row">
-      <div className="">
+      <div>
         <p className="text-3xl md:text-5xl font-bold md:leading-[3.5rem] lg:mt-4">
-          In your busy <br />
-          schedule never worry about <br className="hidden" /> finding clean{" "}
-          <span className="text-brand/pink">washrooms</span> again
+          In your busy schedule <br />
+          never worry about <br className="hidden" /> finding clean{" "}
+          <span className="text-brand/pink relative">
+            washrooms{" "}
+            <span className="bg-brand/pink/30 blur-3xl h-8 left-0 w-full absolute -z-10"/>
+          </span>
+          again
         </p>
-        <div className="flex-col items-start mt-12 md:mt-24 flex">
+        <div className="flex-col items-start mt-12 md:mt-24 flex relative">
           <p className="text-slate-300 mb-3 text-xs">
-            No need for additional app on your phone, <br />
+            No need for an additional app, <br />
             just use your whatsapp
           </p>
-          <Button>Get whatsapp bot</Button>
+          <Button className="font-semibold">
+            Get whatsapp bot <FaWhatsapp className="h-5 w-5 ml-2" />{" "}
+          </Button>
+          <Image
+            src={arrow}
+            alt="arrow"
+            height={40}
+            width={30}
+            className="absolute left-[12rem] top-10 animate-bounce"
+          />
         </div>
       </div>
       <div className="hidden md:block relative">
-        <div className="bg-brand/pink/30 blur-3xl h-[200px] top-32 absolute left-0 right-0 -z-10"></div>
+        <div className="bg-brand/pink/30 blur-3xl h-[200px] top-32 absolute left-0 right-0 -z-10"/>
         <Image
           src={crowd}
           alt="crowd"
