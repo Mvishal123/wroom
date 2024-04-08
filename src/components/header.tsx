@@ -8,7 +8,7 @@ import CustomButtom from "./custom-button";
 
 const Header = () => {
   return (
-    <header className="section-spacing flex justify-between items-center py-6 bg-brand/secondary/10">
+    <header className="section-spacing flex justify-between items-center py-4 bg-brand/secondary/10">
       <Link href="/" className="text-brand/pink text-2xl font-bold">
         Wroom.
       </Link>
@@ -20,7 +20,7 @@ const Header = () => {
                 href={link.href}
                 key={link.label}
                 className={clsx(
-                  "text-normal text-slate-400 px-4 hover:text-brand/pink/75"
+                  "text-sm text-slate-400 px-4 hover:text-brand/pink/75"
                 )}
               >
                 {link.label}
