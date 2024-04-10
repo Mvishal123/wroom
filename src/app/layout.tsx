@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { SessionProvider } from "next-auth/react";
 import { auth } from "../../auth";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,7 +31,10 @@ export default async function RootLayout({
           storageKey="wroom"
           disableTransitionOnChange
         >
-          <SessionProvider session={session}>{children}</SessionProvider>
+          <SessionProvider session={session}>
+            {children}
+            <Footer />
+          </SessionProvider>
         </ThemeProvider>
       </body>
     </html>

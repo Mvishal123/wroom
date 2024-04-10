@@ -1,5 +1,5 @@
 import { phone, qrcode } from "@/assets";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
   WHATSAPP_USER_PAGE_DETAILS,
   WHATSAPP_USER_PAGE_QRCODE,
@@ -42,9 +42,9 @@ const Page = () => {
               </div>
             ))}
           <Link href="#qrcode" className="flex justify-center mt-[480px]">
-            <Button>
-              Get whatsappbot <FaWhatsapp className="h-5 w-5 ml-2" />
-            </Button>
+          <Link href="/getstarted" className={buttonVariants({className: "flex items-center"}) }>
+            Get bot <FaWhatsapp className="h-5 w-5 ml-2" />
+          </Link>
           </Link>
         </div>
 

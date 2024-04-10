@@ -6,10 +6,11 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { useClientSession } from "@/utils/get-client-session";
-import { FaUser } from "react-icons/fa";
+import { FaUser, FaWhatsapp } from "react-icons/fa";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import { Button } from "./ui/button";
+import { Button, buttonVariants } from "./ui/button";
 import { signOut } from "next-auth/react";
+import Link from "next/link";
 
 const UserProfileButton = () => {
   const session = useClientSession();
@@ -29,6 +30,14 @@ const UserProfileButton = () => {
           align="end"
           className="max-w-[150px] bg-brand/secondary"
         >
+          <Link
+            href="/getstarted"
+            className={buttonVariants({
+              className: "hidden max-md:flex items-center w-full mb-4",
+            })}
+          >
+            Get bot <FaWhatsapp className="h-5 w-5 ml-2" />
+          </Link>
           <Button
             className="w-full"
             onClick={() => {

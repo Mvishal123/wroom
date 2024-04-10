@@ -4,16 +4,23 @@ import clsx from "clsx";
 import Link from "next/link";
 import CustomButtom from "./custom-button";
 import UserProfileButton from "./user-profile-button";
+import { Button, buttonVariants } from "./ui/button";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Header = async () => {
   const session = await getServerSession();
   return (
     <header className="section-spacing flex justify-between items-center py-4 bg-brand/secondary/10">
       <Link href="/" className="text-brand/pink text-2xl font-bold">
-        Wroom.
+        Wroom<span className="text-white">.</span>
       </Link>
       {session ? (
-        <UserProfileButton />
+        <div className="flex items-center gap-6">
+          <Link href="/getstarted" className={buttonVariants({size:"sm", className: "md:flex hidden items-center"}) }>
+            Get bot <FaWhatsapp className="h-5 w-5 ml-2" />
+          </Link>
+          <UserProfileButton />
+        </div>
       ) : (
         <nav className="flex items-center gap-12">
           <div className="hidden sm:block">
