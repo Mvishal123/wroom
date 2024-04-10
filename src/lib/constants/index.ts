@@ -56,3 +56,40 @@ export const USER_LOCATION = {
   address:
     "P4X9+W3R, Delhi Technological University, Shahbad Daulatpur Village, Rohini, New Delhi, Delhi, 110042",
 };
+
+export const WHATSAPP_USER_PAGE_DETAILS = [
+  {
+    header: "Heading 1",
+    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
+  },
+  {
+    header: "Heading 2",
+    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
+  },
+  {
+    header: "Heading 3",
+    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
+  },
+];
+
+export const WHATSAPP_USER_PAGE_QRCODE = [
+  {
+    step: 1,
+    text: "Scan the QR code",
+  },
+  {
+    step: 2,
+    text: "Send ACTIVATE",
+  },
+  {
+    step: 3,
+    text: "Enter your registered email and password",
+  },
+  {
+    step: 4,
+    text: "Verify through email",
+  },
+  {
+    step: "Enjoy in public worry free!",
+  },
+];
