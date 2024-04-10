@@ -1,7 +1,13 @@
 import WashroomCard from "@/components/washroom-card";
 import { USER_LOCATION, WASHROOM_MOCK_DATA } from "@/lib/constants";
+import { auth } from "../../../../auth";
+import { redirect } from "next/navigation";
 
-const Page = () => {
+const Page = async () => {
+  const user = await auth();
+  if (!user) {
+    return redirect("/");
+  }
   return (
     <div className="section-spacing mt-6">
       <h1 className="text-3xl font-bold">Washrooms near me</h1>

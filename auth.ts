@@ -7,6 +7,7 @@ export const {
   handlers: { GET, POST },
   auth,
   signIn,
+  signOut,
 } = NextAuth({
   callbacks: {
     async signIn({ account, user }) {
@@ -19,6 +20,7 @@ export const {
       return token;
     },
   },
+  secret: process.env.AUTH_SECRET || "123",
   adapter: PrismaAdapter(db),
   session: { strategy: "jwt" },
   ...authConfig,
