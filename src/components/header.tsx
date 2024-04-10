@@ -1,12 +1,9 @@
-"use client";
-
 import { NAV_LINKS } from "@/lib/constants";
 import clsx from "clsx";
 import Link from "next/link";
-import React from "react";
 import CustomButtom from "./custom-button";
 
-const Header = () => {
+const Header = async () => {
   return (
     <header className="section-spacing flex justify-between items-center py-4 bg-brand/secondary/10">
       <Link href="/" className="text-brand/pink text-2xl font-bold">
@@ -28,7 +25,9 @@ const Header = () => {
             );
           })}
         </div>
-        <CustomButtom label="Sign up" onClick={() => {}} />
+        <CustomButtom
+          label="Sign up"
+        />
       </nav>
     </header>
   );

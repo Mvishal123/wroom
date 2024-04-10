@@ -1,0 +1,61 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(auto()) @map("_id") @db.ObjectId
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  accounts      Account[]
+
+  twoFactorEnabled Boolean @default(false)
+}
+
+model Partner {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  shopname String
+  state    String
+  city     String
+  pincode  String
+  address  String
+  shopType String
+  email    String @unique
+
+  washrooms Washroom[]
+}
+
+model Account {
+  id                String  @id @default(auto()) @map("_id") @db.ObjectId
+  type              String
+  provider          String
+  providerAccountId String
+  token_type        String?
+  refresh_token     String? @db.String
+  access_token      String? @db.String
+  id_token          String? @db.String
+  scope             String?
+  session_state     String?
+  expires_at        Int?
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String @db.ObjectId
+
+  @@unique([provider, providerAccountId])
+  @@map("account")
+}
+
+model Washroom {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  image String
+
+  partnerId String  @db.ObjectId
+  partner   Partner @relation(fields: [partnerId], references: [id])
+}
