@@ -27,7 +27,7 @@ const Hero = () => {
             href="/getstarted"
             className={buttonVariants({ className: "flex items-center" })}
           >
-            Get bot <FaWhatsapp className="h-5 w-5 ml-2" />
+            Get whatsapp bot <FaWhatsapp className="h-5 w-5 ml-2" />
           </Link>
           <Image
             src={arrow}
