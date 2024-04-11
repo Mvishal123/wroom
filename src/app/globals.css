@@ -83,6 +83,10 @@ html {
   .section-spacing {
     @apply px-6 sm:px-12 lg:px-32;
   }
+
+  .page-min-height {
+    @apply min-h-[calc(100vh-8rem)]
+  }
 }
 
 .text-border-black {

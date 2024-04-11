@@ -13,7 +13,7 @@ const Footer = () => {
             <Link href="/getstarted">
               <p className="text-sm hover:text-brand/pink">Get whatsapp bot</p>
             </Link>
-            <Link href="/getstarted/business">
+            <Link href="/partner">
               <p className="text-sm hover:text-brand/pink">Become a partner</p>
             </Link>
           </div>

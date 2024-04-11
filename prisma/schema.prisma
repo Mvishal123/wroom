@@ -24,14 +24,15 @@ model User {
 }
 
 model Partner {
-  id       String @id @default(auto()) @map("_id") @db.ObjectId
-  shopname String
-  state    String
-  city     String
-  pincode  String
-  address  String
-  shopType String
-  email    String @unique
+  id        String  @id @map("_id") @db.ObjectId
+  shopname  String?
+  state     String?
+  city      String?
+  pincode   String?
+  address   String?
+  shopType  String?
+  email     String  @unique
+  published Boolean @default(false)
 
   washrooms Washroom[]
 }
@@ -59,7 +60,7 @@ model Account {
 model Washroom {
   id String @id @default(auto()) @map("_id") @db.ObjectId
 
-  image String
+  images String[]
 
   partnerId String  @db.ObjectId
   partner   Partner @relation(fields: [partnerId], references: [id])
