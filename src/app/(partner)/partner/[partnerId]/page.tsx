@@ -16,7 +16,7 @@ const Page = async ({ params }: { params: { partnerId: string } }) => {
     return <PartnerDetailsForm partnerId={session.userId} />;
   }
 
-  return <></>;
+  return <>{JSON.stringify(session)}</>;
 };
 
 export default Page;

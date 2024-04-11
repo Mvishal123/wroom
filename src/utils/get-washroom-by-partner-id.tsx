@@ -1,7 +1,7 @@
 import { db } from "@/lib/db";
 
 export const getWashroomByPartnerId = async (partnerId: string) => {
-  const washroom = await db.washroom.findFirst({
+  const washroom = await db.washroomImage.findMany({
     where: {
       partnerId,
     },
