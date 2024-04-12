@@ -1,6 +1,5 @@
-import Header from "@/components/header";
 import NewHeader from "@/components/new-header";
-import React, { PropsWithChildren } from "react";
+import React from "react";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (

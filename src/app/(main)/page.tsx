@@ -1,7 +1,6 @@
 import FinalSection from "@/components/sections/final-section";
 import FindWashrooms from "@/components/sections/find-washrooms";
 import Hero2 from "@/components/sections/new-hero";
-import Onboarding from "@/components/sections/onboarding";
 import Priorities from "@/components/sections/priorities";
 import Updates from "@/components/sections/updates";
 import { getServerSession } from "@/utils/get-server-session";
