@@ -9,7 +9,6 @@ const Page = async () => {
   const session = await getServerSession();
 
   if (!session) {
-    toast("Signup to become a partner");
     return redirect("/");
   }
 

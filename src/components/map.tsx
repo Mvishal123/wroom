@@ -1,8 +1,7 @@
 "use client";
-import { USER_LOCATION, WASHROOM_MOCK_DATA } from "@/lib/constants";
 import { WashroomDataType } from "@/types";
 import { GoogleMap, MarkerF, useJsApiLoader } from "@react-google-maps/api";
-import React from "react";
+import React, { useCallback, useRef, useState } from "react";
 
 const containerStyle = {
   width: "100%",
@@ -14,21 +13,43 @@ const options = {
   zoomControl: false,
   streetViewControl: false,
 };
+
+interface Coordinates {
+  lat: number;
+  lng: number;
+}
+
 interface MapProps {
   data: WashroomDataType;
   zoom?: number;
 }
-function MyComponent({ data, zoom = 15 }: MapProps) {
+function MyComponent({ data, zoom = 8 }: MapProps) {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY as string,
   });
-  const center = {
-    lat: USER_LOCATION.latitude,
-    lng: USER_LOCATION.longitude,
-  };
 
   const [map, setMap] = React.useState(null);
+  const [coordinates, setCoordinates] = useState<Coordinates | null>(null);
+  // const [center, setCenter] = useState<Coordinates | null>();
+
+  const center = {
+    lat: 28.7432986935,
+    lng: 77.1168828658,
+  };
+
+  const onMapClick = useCallback((e: any) => {
+    const lng = e.latLng?.lng();
+    const lat = e.latLng?.lat();
+    console.log({ lat, lng });
+
+    setCoordinates({ lat: lat!, lng: lng! });
+  }, []);
+
+  const mapRef = useRef();
+  const onMapLoad = useCallback((map: any) => {
+    mapRef.current = map;
+  }, []);
 
   const onLoad = React.useCallback(function callback(map: any) {
     // This is just an example of getting and using the map instance!!! don't just blindly copy!
@@ -43,23 +64,20 @@ function MyComponent({ data, zoom = 15 }: MapProps) {
   }, []);
 
   return isLoaded ? (
-    <GoogleMap
-      mapContainerStyle={containerStyle}
-      center={center}
-      zoom={zoom}
-      options={options}
-      onLoad={onLoad}
-      onUnmount={onUnmount}
-    >
-      {/* {WASHROOM_MOCK_DATA.map((data) => (
-        <MarkerF position={{ lat: data.latitude, lng: data.longitude }} />
-      ))} */}
-      <MarkerF
-        position={{ lat: data.latitude, lng: data.longitude }}
-        // icon={{url: "" }}
-      />
-      <></>
-    </GoogleMap>
+    <div className="w-full h-full">
+      <GoogleMap
+        mapContainerStyle={containerStyle}
+        zoom={15}
+        options={options}
+        onLoad={onMapLoad}
+        onUnmount={onUnmount}
+        onClick={onMapClick}
+      >
+        {coordinates && (
+          <MarkerF position={{ lat: coordinates.lat, lng: coordinates.lng }} />
+        )}
+      </GoogleMap>
+    </div>
   ) : (
     <></>
   );

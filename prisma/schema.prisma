@@ -24,15 +24,21 @@ model User {
 }
 
 model Partner {
-  id        String  @id @map("_id") @db.ObjectId
-  shopName  String?
+  id       String  @id @map("_id") @db.ObjectId
+  email    String  @unique
+  shopName String?
+  shopType String?
+
   state     String?
   city      String?
   pincode   String?
   address   String?
-  shopType  String?
-  email     String  @unique
-  published Boolean @default(false)
+  latitude  String?
+  longitude String?
+
+  aadhar        String?
+  customer_type String?
+  published     Boolean @default(false)
 
   washrooms WashroomImage[]
 }
@@ -62,6 +68,8 @@ model WashroomImage {
   fileId   String @unique
   fileName String
   image    String
+
+  rating Int?
 
   partnerId String  @db.ObjectId
   partner   Partner @relation(fields: [partnerId], references: [id])

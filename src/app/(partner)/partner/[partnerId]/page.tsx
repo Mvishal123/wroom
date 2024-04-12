@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { UserRole } from "@prisma/client";
 import { getPartnerById } from "@/utils/get-partner-by-id";
 import PartnerDetailsForm from "@/components/partner/partner-details-form";
+import { getCurrentLocation } from "@/utils/get-user-location";
 
 const Page = async ({ params }: { params: { partnerId: string } }) => {
   const session = await getServerSession();
@@ -16,7 +17,7 @@ const Page = async ({ params }: { params: { partnerId: string } }) => {
     return <PartnerDetailsForm partnerId={session.userId} />;
   }
 
-  return <>{JSON.stringify(session)}</>;
+  return <>{JSON.stringify("")}</>;
 };
 
 export default Page;
