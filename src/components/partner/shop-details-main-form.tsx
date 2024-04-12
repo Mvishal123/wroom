@@ -40,7 +40,7 @@ const ShopDetailsMainForm = ({
     if (washroomData && washroomData?.length > 0) {
       setFiles((prev) => [...washroomData.map((data) => data.fileName)]);
 
-      setImageCompleted(true);
+      setImageCompleted(false);
     }
   }, []);
 

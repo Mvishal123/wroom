@@ -9,8 +9,7 @@ const Page = async () => {
   if (!user) {
     return redirect("/");
   }
-  console.log(user);
-  
+
   return (
     <div className="section-spacing mt-6">
       <h1 className="text-3xl font-bold">Washrooms near me</h1>

@@ -26,11 +26,12 @@ model User {
 model Partner {
   id        String  @id @map("_id") @db.ObjectId
   shopName  String?
+  shopType  String?
+
   state     String?
   city      String?
   pincode   String?
   address   String?
-  shopType  String?
   email     String  @unique
   published Boolean @default(false)
 

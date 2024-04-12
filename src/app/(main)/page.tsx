@@ -1,10 +1,11 @@
-import Hero from "@/components/sections/hero";
+import FinalSection from "@/components/sections/final-section";
+import FindWashrooms from "@/components/sections/find-washrooms";
+import Hero2 from "@/components/sections/new-hero";
 import Onboarding from "@/components/sections/onboarding";
-import { db } from "@/lib/db";
-import React from "react";
-import { auth } from "../../../auth";
-import { redirect } from "next/navigation";
+import Priorities from "@/components/sections/priorities";
+import Updates from "@/components/sections/updates";
 import { getServerSession } from "@/utils/get-server-session";
+import { redirect } from "next/navigation";
 
 const Page = async () => {
   const session = await getServerSession();
@@ -14,8 +15,12 @@ const Page = async () => {
 
   return (
     <div>
-      <Hero />
-      <Onboarding />
+      <Hero2 />
+      <Priorities />
+      <Updates />
+      <FindWashrooms />
+      <FinalSection />
+      {/* <Onboarding /> */}
     </div>
   );
 };
