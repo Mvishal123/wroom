@@ -5,11 +5,12 @@ import React from "react";
 import KPICard from "./kpi-card";
 
 import { HiUsers } from "react-icons/hi2";
+import BarChart from "./bar-chart";
+import AgeTable from "./age-table";
 
 const Dashboard = async ({ partnerId }: { partnerId: string }) => {
   const metrics = await getCustomerMetricsById(partnerId);
   const partnerDetails = await getPartnerById(partnerId);
-  console.log(metrics);
 
   if (partnerDetails) {
     return (
@@ -36,8 +37,18 @@ const Dashboard = async ({ partnerId }: { partnerId: string }) => {
               data={metrics.data?.totalCustomers || 0}
             />
           </div>
-          <div>
-              
+          <div className="grid grid-cols-1 md:grid-cols-2 mt-6 gap-4">
+            <div className="bg-brand/secondary/75 p-2 rounded-xl">
+              <BarChart
+                data={{
+                  males: metrics.data?.maleCustomers || 0,
+                  females: metrics.data?.femaleCustomers || 0,
+                }}
+              />
+            </div>
+            <div>
+              <AgeTable data={metrics.data?.ageGroups!} />
+            </div>
           </div>
         </div>
       </div>
