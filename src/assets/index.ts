@@ -5,7 +5,24 @@ import washroom from "../../public/images/toilet.jpeg";
 import phone from "../../public/images/phone.png";
 import qrcode from "../../public/images/qrcode.png";
 
+import herobg2 from "../../public/images/herobg2.png";
+
 // SVGs
 import arrow from "../../public/svg/arrow.svg";
+import priorityphone from "../../public/svg/priorityphone.svg";
+import decorative2 from "../../public/svg/decorative2.svg";
+import landinghome from "../../public/svg/landinghome.svg";
 
-export { crowd, maps, arrow, menWashroom, washroom, phone, qrcode };
+export {
+  crowd,
+  maps,
+  arrow,
+  menWashroom,
+  washroom,
+  phone,
+  qrcode,
+  priorityphone,
+  herobg2,
+  decorative2,
+  landinghome,
+};

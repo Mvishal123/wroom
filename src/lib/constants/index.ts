@@ -12,9 +12,10 @@ export const NAV_LINKS = [
 ];
 
 export const ONBOARDING_STEPS = [
-  { step: 1, text: "Quickly sign up on our website" },
-  { step: 2, text: "Subscribe to our magical WhatsApp bot in seconds" },
-  { step: 3, text: "Enjoy worry-free restroom access in public" },
+  { step: 1, text: "Scan our QR code" },
+  { step: 2, text: "Send ACTIVATE in chat" },
+  { step: 3, text: "Enter your registered email and password" },
+  { step: 4, text: "Enjoy worry-free restroom access in public" },
 ];
 
 export const WASHROOM_MOCK_DATA = [
@@ -91,5 +92,20 @@ export const WHATSAPP_USER_PAGE_QRCODE = [
   },
   {
     step: "Enjoy in public worry free!",
+  },
+];
+
+export const PRIORITY_TEXTS = [
+  {
+    header: "Your hygiene",
+    text: "We will find the cleanest washroom in the vicinity of your current location ",
+  },
+  {
+    header: "Your hygiene",
+    text: "We will find the cleanest washroom in the vicinity of your current location ",
+  },
+  {
+    header: "Your hygiene",
+    text: "We will find the cleanest washroom in the vicinity of your current location ",
   },
 ];
