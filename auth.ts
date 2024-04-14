@@ -23,6 +23,10 @@ export const {
       if (token.userRole) {
         session.user.userRole = token.userRole as UserRole;
       }
+
+      if (token.onboarded) {
+        session.user.onboarded = token.onboarded as boolean;
+      }
       return session;
     },
     async jwt({ token }) {
@@ -37,6 +41,7 @@ export const {
 
       token.userId = user.id;
       token.userRole = user.role;
+      token.onboarded = user.onboarded;
 
       return token;
     },

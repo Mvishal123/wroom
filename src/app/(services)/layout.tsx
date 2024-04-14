@@ -1,9 +1,9 @@
 import Header from "@/components/header";
 import React from "react";
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+const Layout = async ({ children }: { children: React.ReactNode }) => {
   return (
-    <div>
+    <div className="page-min-height">
       <Header />
       {children}
     </div>
