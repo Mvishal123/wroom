@@ -30,7 +30,8 @@ model User {
   age       Int?
   onboarded Boolean @default(false)
 
-  role UserRole @default(USER)
+  role      UserRole    @default(USER)
+  Customers Customers[]
 }
 
 model Partner {
@@ -83,4 +84,13 @@ model WashroomImage {
 
   partnerId String  @db.ObjectId
   partner   Partner @relation(fields: [partnerId], references: [id])
+}
+
+model Customers {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  partnerId String   @db.ObjectId
+  userId    String   @db.ObjectId
+  date      DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
 }

@@ -13,7 +13,7 @@ const Page = async () => {
   }
 
   return (
-    <div>
+    <div className="overflow-hidden">
       <Hero2 />
       <Priorities />
       <Updates />

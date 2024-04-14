@@ -7,7 +7,7 @@ import { buttonVariants } from "../ui/button";
 const Hero2 = () => {
   return (
     <div className="">
-      <div className="w-screen h-screen flex justify-center">
+      <div className="w-screen h-screen flex justify-center relative">
         <Image
           src={herobg2}
           alt="hero-bg"
@@ -40,7 +40,6 @@ const Hero2 = () => {
           </div>
         </div>
       </div>
-      {/* <div className="h-32 absolute -mt-20 bg-gradient-t from-brand/main to-transparent w-full z-50"></div> */}
     </div>
   );
 };
