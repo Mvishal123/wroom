@@ -1,10 +1,10 @@
 import { getServerSession } from "@/utils/get-server-session";
 import { redirect } from "next/navigation";
 
-import { UserRole } from "@prisma/client";
-import { getPartnerById } from "@/utils/get-partner-by-id";
 import PartnerDetailsForm from "@/components/partner/partner-details-form";
-import { getCurrentLocation } from "@/utils/get-user-location";
+import { getPartnerById } from "@/utils/get-partner-by-id";
+import { UserRole } from "@prisma/client";
+import Dashboard from "@/components/dashboard/dashboard";
 
 const Page = async ({ params }: { params: { partnerId: string } }) => {
   const session = await getServerSession();
@@ -17,7 +17,11 @@ const Page = async ({ params }: { params: { partnerId: string } }) => {
     return <PartnerDetailsForm partnerId={session.userId} />;
   }
 
-  return <>{JSON.stringify("")}</>;
+  return (
+    <div>
+      <Dashboard partnerId={params.partnerId} />
+    </div>
+  );
 };
 
 export default Page;

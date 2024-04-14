@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { partnerFormSchema } from "@/lib/schema/partner-form-schema";
+import { partnerFormSchema } from "@/lib/schema/index";
 import { Partner, WashroomImage } from "@prisma/client";
 
 import { Button } from "@/components/ui/button";
@@ -14,7 +14,7 @@ import {
   FormField,
   FormItem,
   FormLabel,
-  FormMessage
+  FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { createPartner } from "@/utils/server-actions/create-partner";
@@ -66,7 +66,7 @@ const ShopDetailsMainForm = ({
     createPartner(values, data.id).then((res) => {
       if (res.success) {
         toast(res.success);
-        router.push(`/partner/${data.id}`)
+        router.refresh();
       } else {
         toast(res.error);
       }

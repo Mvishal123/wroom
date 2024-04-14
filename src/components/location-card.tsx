@@ -27,6 +27,8 @@ const LocationCard = () => {
       );
 
       setAddress(address.data.display_name);
+      console.log({latLng, address});
+      
     };
     init();
   }, []);

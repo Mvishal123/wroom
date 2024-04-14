@@ -3,7 +3,7 @@ import React, { PropsWithChildren } from "react";
 
 const layout = ({ children }: PropsWithChildren) => {
   return (
-    <div>
+    <div className="page-min-height">
       <Header />
       {children}
     </div>
