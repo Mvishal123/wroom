@@ -1,12 +1,11 @@
 import { phone, qrcode } from "@/assets";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import {
   WHATSAPP_USER_PAGE_DETAILS,
   WHATSAPP_USER_PAGE_QRCODE,
 } from "@/lib/constants";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
 
 const Page = () => {
