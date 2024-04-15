@@ -35,8 +35,8 @@ function MyComponent({ data, zoom = 8 }: MapProps) {
   const onLoad = React.useCallback(function callback(map: any) {
     const bounds = new window.google.maps.LatLngBounds(data);
     map.fitBounds(bounds);
-    
-  console.log({data});
+
+    console.log({ data });
     setMap(map);
   }, []);
 
@@ -44,8 +44,7 @@ function MyComponent({ data, zoom = 8 }: MapProps) {
     setMap(null);
   }, []);
 
-  console.log({data});
-  
+  console.log({ data });
 
   return isLoaded ? (
     <div className="w-full h-full">
@@ -57,7 +56,7 @@ function MyComponent({ data, zoom = 8 }: MapProps) {
         onLoad={onLoad}
         onUnmount={onUnmount}
       >
-        <MarkerF position={data}/>
+        <MarkerF position={data} clickable />
       </GoogleMap>
     </div>
   ) : (

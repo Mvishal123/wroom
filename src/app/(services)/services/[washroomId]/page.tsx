@@ -67,7 +67,7 @@ const Page = ({ params }: { params: { washroomId: string } }) => {
                   lat: Number(washroomData?.latitude!),
                   lng: Number(washroomData?.longitude!),
                 }}
-                zoom={18}
+                zoom={17}
               />
             </div>
             <div className="mt-12">
