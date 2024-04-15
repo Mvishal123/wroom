@@ -46,7 +46,7 @@ export const {
       return token;
     },
   },
-  secret: process.env.AUTH_SECRET || "123",
+  secret: process.env.NEXTAUTH_SECRET || "123",
   adapter: PrismaAdapter(db),
   session: { strategy: "jwt" },
   ...authConfig,
