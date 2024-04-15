@@ -35,20 +35,21 @@ model User {
 }
 
 model Partner {
-  id       String  @id @map("_id") @db.ObjectId
-  email    String  @unique
-  shopName String?
-  shopType String?
+  id       String @id @map("_id") @db.ObjectId
+  email    String @unique
+  shopName String
+  shopType String
 
-  state     String?
-  city      String?
-  pincode   String?
-  address   String?
-  latitude  String?
-  longitude String?
+  state   String
+  city    String
+  pincode String
+  address String
 
-  aadhar        String?
-  customer_type String?
+  latitude  String
+  longitude String
+
+  aadhar        String
+  customer_type String
   published     Boolean @default(false)
 
   washrooms WashroomImage[]

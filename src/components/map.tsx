@@ -1,5 +1,5 @@
 "use client";
-import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
+import { GoogleMap, MarkerF, useJsApiLoader } from "@react-google-maps/api";
 import React, { useState } from "react";
 
 interface Coordinates {
@@ -49,13 +49,16 @@ function MyComponent({ data, zoom = 8 }: MapProps) {
 
   return isLoaded ? (
     <div className="w-full h-full">
-      {/* <GoogleMap
+      <GoogleMap
         mapContainerStyle={containerStyle}
         zoom={zoom}
+        center={data}
         options={options}
         onLoad={onLoad}
         onUnmount={onUnmount}
-      ></GoogleMap> */}
+      >
+        <MarkerF position={data}/>
+      </GoogleMap>
     </div>
   ) : (
     <></>
