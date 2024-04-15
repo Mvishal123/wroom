@@ -5,7 +5,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { useClientSession } from "@/utils/get-client-session";
+import { useClientSession } from "@/utils/server-actions/get-client-session";
 import { FaUser, FaWhatsapp } from "react-icons/fa";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Button, buttonVariants } from "./ui/button";

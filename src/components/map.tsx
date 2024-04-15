@@ -1,7 +1,16 @@
 "use client";
-import { WashroomDataType } from "@/types";
-import { GoogleMap, MarkerF, useJsApiLoader } from "@react-google-maps/api";
-import React, { useCallback, useRef, useState } from "react";
+import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
+import React, { useState } from "react";
+
+interface Coordinates {
+  lat: number;
+  lng: number;
+}
+
+interface MapProps {
+  data: Coordinates;
+  zoom?: number;
+}
 
 const containerStyle = {
   width: "100%",
@@ -14,15 +23,6 @@ const options = {
   streetViewControl: false,
 };
 
-interface Coordinates {
-  lat: number;
-  lng: number;
-}
-
-interface MapProps {
-  data: WashroomDataType;
-  zoom?: number;
-}
 function MyComponent({ data, zoom = 8 }: MapProps) {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
@@ -30,32 +30,13 @@ function MyComponent({ data, zoom = 8 }: MapProps) {
   });
 
   const [map, setMap] = React.useState(null);
-  const [coordinates, setCoordinates] = useState<Coordinates | null>(null);
-  // const [center, setCenter] = useState<Coordinates | null>();
-
-  const center = {
-    lat: 28.7432986935,
-    lng: 77.1168828658,
-  };
-
-  const onMapClick = useCallback((e: any) => {
-    const lng = e.latLng?.lng();
-    const lat = e.latLng?.lat();
-    console.log({ lat, lng });
-
-    setCoordinates({ lat: lat!, lng: lng! });
-  }, []);
-
-  const mapRef = useRef();
-  const onMapLoad = useCallback((map: any) => {
-    mapRef.current = map;
-  }, []);
+  const [center, setCenter] = useState<Coordinates | null>();
 
   const onLoad = React.useCallback(function callback(map: any) {
-    // This is just an example of getting and using the map instance!!! don't just blindly copy!
-    const bounds = new window.google.maps.LatLngBounds(center);
+    const bounds = new window.google.maps.LatLngBounds(data);
     map.fitBounds(bounds);
-
+    
+  console.log({data});
     setMap(map);
   }, []);
 
@@ -63,20 +44,18 @@ function MyComponent({ data, zoom = 8 }: MapProps) {
     setMap(null);
   }, []);
 
+  console.log({data});
+  
+
   return isLoaded ? (
     <div className="w-full h-full">
-      <GoogleMap
+      {/* <GoogleMap
         mapContainerStyle={containerStyle}
-        zoom={15}
+        zoom={zoom}
         options={options}
-        onLoad={onMapLoad}
+        onLoad={onLoad}
         onUnmount={onUnmount}
-        onClick={onMapClick}
-      >
-        {coordinates && (
-          <MarkerF position={{ lat: coordinates.lat, lng: coordinates.lng }} />
-        )}
-      </GoogleMap>
+      ></GoogleMap> */}
     </div>
   ) : (
     <></>

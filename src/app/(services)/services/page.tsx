@@ -1,9 +1,8 @@
 import LocationCard from "@/components/location-card";
 import UserOnboardingDialog from "@/components/user-onboarding.-dialog";
 import WashroomCard from "@/components/washroom-card";
-import { WASHROOM_MOCK_DATA } from "@/lib/constants";
-import { getNearestWashrooms } from "@/utils/get-nearest-washrooms";
-import { getServerSession } from "@/utils/get-server-session";
+import { getNearestWashrooms } from "@/utils/server-actions/get-nearest-washrooms";
+import { getServerSession } from "@/utils/server-actions/get-server-session";
 import { redirect } from "next/navigation";
 
 const Page = async () => {
@@ -18,8 +17,6 @@ const Page = async () => {
   }
 
   const washroomDetails = await getNearestWashrooms();
-  console.log(washroomDetails[0].washrooms);
-  
 
   return (
     <div className="section-spacing mt-6">

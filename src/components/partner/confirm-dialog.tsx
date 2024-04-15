@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
 import { Checkbox } from "../ui/checkbox";
 import { Button } from "../ui/button";
 import { useRouter } from "next/navigation";
-import { useClientSession } from "@/utils/get-client-session";
+import { useClientSession } from "@/utils/server-actions/get-client-session";
 import { confirmPartner } from "@/utils/server-actions/confirm-partner";
 import { toast } from "sonner";
 

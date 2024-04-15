@@ -21,8 +21,6 @@ interface WashroomCardProps {
   };
 }
 const WashroomCard = ({ data }: WashroomCardProps) => {
-  console.log(data);
-
   return (
     <Link
       href={`services/${data.id}`}

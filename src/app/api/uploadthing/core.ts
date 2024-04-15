@@ -1,5 +1,5 @@
 import { db } from "@/lib/db";
-import { getServerSession } from "@/utils/get-server-session";
+import { getServerSession } from "@/utils/server-actions/get-server-session";
 import { createUploadthing, type FileRouter } from "uploadthing/next";
 import { UploadThingError } from "uploadthing/server";
 

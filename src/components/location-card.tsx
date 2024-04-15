@@ -1,6 +1,6 @@
 "use client";
 
-import { getCurrentLocation } from "@/utils/get-user-location";
+import { getCurrentLocation } from "@/utils/server-actions/get-user-location";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
@@ -27,8 +27,6 @@ const LocationCard = () => {
       );
 
       setAddress(address.data.display_name);
-      console.log({latLng, address});
-      
     };
     init();
   }, []);

@@ -14,8 +14,6 @@ interface AgeTableProps {
   };
 }
 const AgeTable = ({ data }: AgeTableProps) => {
-  console.log(data);
-
   return (
     <Table>
       <TableHeader>

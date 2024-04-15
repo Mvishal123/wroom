@@ -1,8 +1,8 @@
-import { getPartnerById } from "@/utils/get-partner-by-id";
+import { getPartnerById } from "@/utils/server-actions/get-partner-by-id";
 import { redirect } from "next/navigation";
 import React from "react";
 import ShopDetailsMainForm from "./shop-details-main-form";
-import { getWashroomByPartnerId } from "@/utils/get-washroom-by-partner-id";
+import { getWashroomByPartnerId } from "@/utils/server-actions/get-washroom-by-partner-id";
 
 interface PartnerDetailsFormProps {
   partnerId: string;

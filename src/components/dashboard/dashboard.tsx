@@ -1,4 +1,4 @@
-import { getPartnerById } from "@/utils/get-partner-by-id";
+import { getPartnerById } from "@/utils/server-actions/get-partner-by-id";
 import { seedData } from "@/utils/seed";
 import { getCustomerMetricsById } from "@/utils/server-actions/get-partner-metrics";
 import React from "react";

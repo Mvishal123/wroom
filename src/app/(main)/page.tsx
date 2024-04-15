@@ -3,7 +3,7 @@ import FindWashrooms from "@/components/sections/find-washrooms";
 import Hero2 from "@/components/sections/new-hero";
 import Priorities from "@/components/sections/priorities";
 import Updates from "@/components/sections/updates";
-import { getServerSession } from "@/utils/get-server-session";
+import { getServerSession } from "@/utils/server-actions/get-server-session";
 import { redirect } from "next/navigation";
 
 const Page = async () => {

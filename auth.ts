@@ -2,7 +2,7 @@ import { db } from "@/lib/db";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import NextAuth from "next-auth";
 import authConfig from "./auth.config";
-import { getUserById } from "@/utils/get-user-by-id";
+import { getUserById } from "@/utils/server-actions/get-user-by-id";
 import { UserRole } from "@prisma/client";
 
 export const {

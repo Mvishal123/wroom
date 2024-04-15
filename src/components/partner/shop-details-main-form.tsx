@@ -62,7 +62,6 @@ const ShopDetailsMainForm = ({
   const { isSubmitting, isValid } = form.formState;
 
   function onSubmit(values: z.infer<typeof partnerFormSchema>) {
-    console.log({ values });
     createPartner(values, data.id).then((res) => {
       if (res.success) {
         toast(res.success);
@@ -196,7 +195,6 @@ const ShopDetailsMainForm = ({
                   className="ut-button:bg-brand/pink/80 ut-label:text-brand/pink bg-brand/secondary border-2 border-brand/pink/20"
                   onClientUploadComplete={(res) => {
                     setImageCompleted(true);
-                    console.log({ data: res });
                   }}
                 />
               )}

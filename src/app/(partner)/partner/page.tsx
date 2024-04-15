@@ -1,4 +1,4 @@
-import { getServerSession } from "@/utils/get-server-session";
+import { getServerSession } from "@/utils/server-actions/get-server-session";
 import { redirect } from "next/navigation";
 import { toast } from "sonner";
 

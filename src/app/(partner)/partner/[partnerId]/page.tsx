@@ -1,8 +1,8 @@
-import { getServerSession } from "@/utils/get-server-session";
+import { getServerSession } from "@/utils/server-actions/get-server-session";
 import { redirect } from "next/navigation";
 
 import PartnerDetailsForm from "@/components/partner/partner-details-form";
-import { getPartnerById } from "@/utils/get-partner-by-id";
+import { getPartnerById } from "@/utils/server-actions/get-partner-by-id";
 import { UserRole } from "@prisma/client";
 import Dashboard from "@/components/dashboard/dashboard";
 

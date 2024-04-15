@@ -1,5 +1,5 @@
 import { NAV_LINKS } from "@/lib/constants";
-import { getServerSession } from "@/utils/get-server-session";
+import { getServerSession } from "@/utils/server-actions/get-server-session";
 import clsx from "clsx";
 import Link from "next/link";
 import CustomButtom from "./custom-button";
