@@ -26,7 +26,7 @@ const Page = async () => {
 
       <section className="mt-6">
         <div className="flex flex-wrap gap-6">
-          {washroomDetails.map((data) => (
+          {washroomDetails.map((data) => (  
             <WashroomCard data={data} key={data.id} />
           ))}
         </div>
