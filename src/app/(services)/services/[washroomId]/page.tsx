@@ -27,7 +27,7 @@ const Page = ({ params }: { params: { washroomId: string } }) => {
     };
 
     init();
-  }, []);
+  }, [params.washroomId]);
 
   return (
     <>

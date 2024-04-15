@@ -201,7 +201,7 @@ const ShopDetailsMainForm = ({
               {imageCompleted && (
                 <div className="space-y-2 mt-2">
                   {files.map((file) => (
-                    <div className="p-2 bg-brand/secondary border border-brand/pink/20 rounded-md flex justify-between items-center">
+                    <div className="p-2 bg-brand/secondary border border-brand/pink/20 rounded-md flex justify-between items-center" key={file}>
                       <p className="text-sm"> {file}</p>
                       <Button variant="ghost">
                         <TrashIcon />

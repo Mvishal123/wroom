@@ -56,7 +56,7 @@ function MyComponent({ data, zoom = 8 }: MapProps) {
     map.fitBounds(bounds);
 
     setMap(map);
-  }, []);
+  }, [center]);
 
   const onUnmount = React.useCallback(function callback(map: any) {
     setMap(null);

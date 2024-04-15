@@ -27,7 +27,7 @@ const  FindWashrooms = () => {
         />
         <div className="py-6 xl:max-w-[48%] mx-auto">
           <h1 className="text-normal sm:text-xl md:text-4xl font-bold text-center w-full mt-12">
-            It's so very simple to get started on{" "}
+            It&apso;s so very simple to get started on{" "}
             <span className="text-brand/pink">whatsapp</span>
           </h1>
         </div>
