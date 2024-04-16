@@ -17,6 +17,7 @@ const Header = async () => {
         </Link>
         {session ? (
           <div className="flex items-center gap-6">
+            <Link href="/services" className="max-sm:text-xs text-sm text-slate-300 hover:text-brand/pink/75">Find washrooms</Link>
             <Link
               href="/getstarted"
               className={buttonVariants({
