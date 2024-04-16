@@ -232,6 +232,7 @@ const ShopDetailsMainForm = ({
                     setImageCompleted(true);
                   }}
                 />
+                
               )}
               {imageCompleted && (
                 <div className="space-y-2 mt-2">

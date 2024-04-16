@@ -9,14 +9,11 @@ import { redirect } from "next/navigation";
 
 const Page = async () => {
   const session = await getServerSession();
-  if (session) {
-    return redirect("/services");
-  }
 
   return (
     <div className="overflow-hidden">
       <Hero />
-      <Hero2/>
+      <Hero2 />
       <Priorities />
       <Updates />
       <FindWashrooms />

@@ -29,7 +29,7 @@ const Dashboard = async ({ partnerId }: { partnerId: string }) => {
             <KPICard
               header="Total customers"
               icon={<HiUsers className="h-5 w-5" />}
-              data={metrics.data?.totalCustomers || 0}
+              data={metrics?.data?.totalCustomers || 0}
             />
             <KPICard
               header="Customers this month"
@@ -41,13 +41,13 @@ const Dashboard = async ({ partnerId }: { partnerId: string }) => {
             <div className="bg-brand/secondary/75 p-2 rounded-xl">
               <BarChart
                 data={{
-                  males: metrics.data?.maleCustomers || 0,
-                  females: metrics.data?.femaleCustomers || 0,
+                  males: metrics?.data?.maleCustomers || 0,
+                  females: metrics?.data?.femaleCustomers || 0,
                 }}
               />
             </div>
             <div>
-              <AgeTable data={metrics.data?.ageGroups!} />
+              <AgeTable data={metrics?.data?.ageGroups!} />
             </div>
           </div>
         </div>
