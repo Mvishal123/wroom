@@ -15,6 +15,7 @@ const Hero2 = () => {
           height={934}
           className="self-center aria-hidden -z-10 absolute h-[120vh] object-cover -translate-y-16"
         />
+        {/* <Image src={}/> */}
         <div className="flex justify-start w-full section-spacing">
           <div className="mt-36 md:max-w-[600px]">
             <h1 className="md:text-5xl font-bold">Find washrooms near you</h1>

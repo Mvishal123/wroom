@@ -12,6 +12,9 @@ export const getNearestWashrooms = async () => {
         },
       },
     },
+    where: {
+      published: true
+    }
   });
 
   return washrooms;

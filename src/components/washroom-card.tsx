@@ -1,10 +1,9 @@
-import { Partner, WashroomImage } from "@prisma/client";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 
 interface WashroomCardProps {
   data: {
-    washrooms: { image: string }[]; // Assuming `image` is a string
+    washrooms: { image: string }[];
     id: string;
     email: string;
     shopName: string | null;
@@ -21,6 +20,8 @@ interface WashroomCardProps {
   };
 }
 const WashroomCard = ({ data }: WashroomCardProps) => {
+  console.log({data});
+  
   return (
     <Link
       href={`services/${data.id}`}

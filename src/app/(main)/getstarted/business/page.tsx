@@ -11,7 +11,7 @@ import { FaWhatsapp } from "react-icons/fa";
 const Page = () => {
   return (
     <div>
-      <section className="relative">
+      <section className="relative mt-28">
         <div className="mt-2 section-spacing text-center">
           <h1 className="text-2xl md:text-4xl font-bold">
             Introducing Botsapp

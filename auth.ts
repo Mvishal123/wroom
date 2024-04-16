@@ -30,11 +30,13 @@ export const {
       return session;
     },
     async jwt({ token }) {
-      if (!token.sub) {
+      if (!token?.sub) {
         return token;
       }
 
       const user = await getUserById(token.sub);
+      console.log({sub: token.sub});
+      
       if (!user) {
         return token;
       }
