@@ -1,5 +1,6 @@
 import FinalSection from "@/components/sections/final-section";
 import FindWashrooms from "@/components/sections/find-washrooms";
+import Hero from "@/components/sections/hero";
 import Hero2 from "@/components/sections/new-hero";
 import Priorities from "@/components/sections/priorities";
 import Updates from "@/components/sections/updates";
@@ -14,7 +15,8 @@ const Page = async () => {
 
   return (
     <div className="overflow-hidden">
-      <Hero2 />
+      <Hero />
+      <Hero2/>
       <Priorities />
       <Updates />
       <FindWashrooms />

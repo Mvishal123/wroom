@@ -7,7 +7,7 @@ import { buttonVariants } from "../ui/button";
 const Hero2 = () => {
   return (
     <div className="">
-      <div className="w-screen h-screen flex justify-center relative">
+      <div className="max-md:hidden w-screen h-screen flex justify-center relative">
         <Image
           src={herobg2}
           alt="hero-bg"

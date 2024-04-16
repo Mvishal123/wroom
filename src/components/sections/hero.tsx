@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <section className="section-spacing py-12 flex items-start flex-col md:flex-row">
+    <section className="md:hidden section-spacing py-12 flex items-start flex-col md:flex-row mt-20">
       <div>
         <p className="text-3xl md:text-5xl font-bold md:leading-[3.5rem] lg:mt-4">
           In your busy schedule <br />

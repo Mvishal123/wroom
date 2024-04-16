@@ -21,7 +21,7 @@ const Page = () => {
           </p>
         </div>
         <div className="h-[78vh] md:h-[90vh]">
-          {Array(3)
+          {/* {Array(3)
             .fill(null)
             .map((_, index) => (
               <div className="flex justify-center" key={index}>
@@ -39,11 +39,15 @@ const Page = () => {
                   } origin-bottom ${index === 1 ? "z-10" : "z-0"} `}
                 />
               </div>
-            ))}
+            ))} */}
+          {/* <Image /> */}
           <Link href="#qrcode" className="flex justify-center mt-[480px]">
-          <Link href="/getstarted" className={buttonVariants({className: "flex items-center"}) }>
-            Get bot <FaWhatsapp className="h-5 w-5 ml-2" />
-          </Link>
+            <Link
+              href="/getstarted"
+              className={buttonVariants({ className: "flex items-center" })}
+            >
+              Get bot <FaWhatsapp className="h-5 w-5 ml-2" />
+            </Link>
           </Link>
         </div>
 
@@ -53,11 +57,6 @@ const Page = () => {
       <section className="section-spacing">
         <div>
           <h1 className="text-2xl font-bold text-center">Lorem ipsum lorem</h1>
-          {/* <p className="text-sm text-slate-300">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis,
-            optio, earum quam porro labore voluptatum repellat corrupti
-            laboriosam
-          </p> */}
         </div>
         <div className="w-full mt-8 flex flex-col md:flex-row gap-4">
           {WHATSAPP_USER_PAGE_DETAILS.map((data) => (
