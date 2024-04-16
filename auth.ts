@@ -35,8 +35,7 @@ export const {
       }
 
       const user = await getUserById(token.sub);
-      console.log({sub: token.sub});
-      
+
       if (!user) {
         return token;
       }

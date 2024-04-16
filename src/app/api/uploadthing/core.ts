@@ -18,7 +18,7 @@ const middleware = async () => {
 
 export const ourFileRouter = {
   washroomImagesUploader: f({
-    image: { maxFileSize: "4MB", minFileCount: 5, maxFileCount: 10 },
+    image: { maxFileSize: "16MB", minFileCount: 5, maxFileCount: 10 },
   })
     .middleware(middleware)
     .onUploadComplete(async ({ metadata, file }) => {

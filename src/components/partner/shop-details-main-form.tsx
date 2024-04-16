@@ -33,16 +33,8 @@ const ShopDetailsMainForm = ({
   data,
   washroomData,
 }: ShopDetailsMainFormProps) => {
-  const [files, setFiles] = useState<string[]>([]);
+  const [files, setFiles] = useState<string[] | []>([]);
   const [imageCompleted, setImageCompleted] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (washroomData && washroomData?.length > 0) {
-      setFiles((prev) => [...washroomData.map((data) => data.fileName)]);
-
-      setImageCompleted(true);
-    }
-  }, []);
 
   const router = useRouter();
 
@@ -56,6 +48,8 @@ const ShopDetailsMainForm = ({
       address: data.address || "",
       state: data.state || "",
       pincode: data.pincode || "",
+      latitude: data.latitude || "",
+      longitude: data.longitude || "",
     },
   });
 
@@ -164,6 +158,46 @@ const ShopDetailsMainForm = ({
                   />
                 </div>
               </div>
+              <div className="flex flex-col md:flex-row gap-4">
+                <div className="space-y-8 flex-1">
+                  <FormField
+                    control={form.control}
+                    name="latitude"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Latitude</FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="E.g. 28.638328691296948"
+                            {...field}
+                          />
+                        </FormControl>
+
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+                <div className="space-y-8 flex-1">
+                  <FormField
+                    control={form.control}
+                    name="longitude"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Longitude</FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="E.g. 77.18343541104453"
+                            {...field}
+                          />
+                        </FormControl>
+
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+              </div>
               <div>
                 <div className="space-y-8 flex-1">
                   <FormField
@@ -194,6 +228,7 @@ const ShopDetailsMainForm = ({
                   endpoint="washroomImagesUploader"
                   className="ut-button:bg-brand/pink/80 ut-label:text-brand/pink bg-brand/secondary border-2 border-brand/pink/20"
                   onClientUploadComplete={(res) => {
+                    setFiles(res.map((data) => data.name));
                     setImageCompleted(true);
                   }}
                 />
@@ -201,7 +236,10 @@ const ShopDetailsMainForm = ({
               {imageCompleted && (
                 <div className="space-y-2 mt-2">
                   {files.map((file) => (
-                    <div className="p-2 bg-brand/secondary border border-brand/pink/20 rounded-md flex justify-between items-center" key={file}>
+                    <div
+                      className="p-2 bg-brand/secondary border border-brand/pink/20 rounded-md flex justify-between items-center"
+                      key={file}
+                    >
                       <p className="text-sm"> {file}</p>
                       <Button variant="ghost">
                         <TrashIcon />

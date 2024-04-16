@@ -13,6 +13,7 @@ const Page = async ({ params }: { params: { partnerId: string } }) => {
   }
 
   const partner = await getPartnerById(session.userId);
+  
   if (!partner?.published) {
     return <PartnerDetailsForm partnerId={session.userId} />;
   }
